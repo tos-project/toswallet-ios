@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BeO-Yt-c4D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BeO-Yt-c4D">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Bold</string>
-            <string>HelveticaNeue-Medium</string>
-        </array>
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Light</string>
-        </array>
-        <array key="Menlo.ttc">
-            <string>Menlo-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--ƀ 0.00 ($0.00)-->
         <scene sceneID="mZ6-bm-XCg">
@@ -1122,14 +1109,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5l-JR-LKA">
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5l-JR-LKA">
                                 <rect key="frame" x="12" y="178" width="36" height="14"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h25-q0-rtl" userLabel="Address View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h25-q0-rtl" userLabel="Address View">
                                 <rect key="frame" x="12" y="200" width="324" height="40"/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.97647058823529409" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1143,7 +1130,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt8-yX-D7H">
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt8-yX-D7H">
                                 <rect key="frame" x="12" y="263" width="43" height="14"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -1153,7 +1140,7 @@
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ev-mN-FNd" userLabel="Litecoin View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ev-mN-FNd" userLabel="Litecoin View">
                                 <rect key="frame" x="12" y="284" width="347" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjE-W8-yAb">
@@ -1178,7 +1165,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="0.91372549020000005" green="0.93725490199999995" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.97254901959999995" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="mIE-Mf-HG3" firstAttribute="leading" secondItem="3ev-mN-FNd" secondAttribute="leading" constant="171" id="4gN-hD-Caq"/>
@@ -1212,8 +1199,8 @@
                                     <outlet property="delegate" destination="RsQ-W7-grB" id="r8I-vJ-Pvw"/>
                                 </connections>
                             </textView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crD-Yc-EK9">
-                                <rect key="frame" x="111" y="478" width="126" height="53"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crD-Yc-EK9">
+                                <rect key="frame" x="111" y="538" width="126" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="126" id="GMO-EZ-uce"/>
                                     <constraint firstAttribute="height" constant="53" id="ucG-8S-6xw"/>
@@ -1270,7 +1257,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce6-Wi-wk4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce6-Wi-wk4">
                                 <rect key="frame" x="330" y="210" width="20" height="20"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -1296,21 +1283,21 @@
                                     <action selector="scanQR:" destination="RsQ-W7-grB" eventType="touchUpInside" id="wbh-n6-WR8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" tag="411" contentMode="center" text="COMING SOON !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="4OR-jS-YxY">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" tag="411" contentMode="center" text="COMING SOON !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="4OR-jS-YxY">
                                 <rect key="frame" x="25" y="197" width="325" height="33"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" tag="411" contentMode="center" text="- ToS Block Team -" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="Cgg-GO-wHE">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" tag="411" contentMode="center" text="- ToS Block Team -" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="Cgg-GO-wHE">
                                 <rect key="frame" x="32" y="437" width="311" height="18"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" tag="411" contentMode="left" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="rmH-4l-Hd8">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" tag="411" contentMode="left" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="rmH-4l-Hd8">
                                 <rect key="frame" x="25" y="248" width="325" height="98"/>
                                 <gestureRecognizers/>
                                 <string key="text">You can’t access the send menu on this app until release the TosCoin exchange. Our ToS development teams are trying hard to do their best. Thanks.</string>
@@ -1348,7 +1335,7 @@
                             <constraint firstItem="3ev-mN-FNd" firstAttribute="trailing" secondItem="Nmx-0C-BXz" secondAttribute="trailingMargin" id="Y9r-cC-OYm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rmH-4l-Hd8" secondAttribute="trailing" constant="9" id="Ye6-LA-7xx"/>
                             <constraint firstItem="3ev-mN-FNd" firstAttribute="leading" secondItem="h25-q0-rtl" secondAttribute="leading" id="ZKU-wq-a52"/>
-                            <constraint firstItem="ce6-Wi-wk4" firstAttribute="leading" secondItem="SgP-DR-cyl" secondAttribute="trailing" constant="30" id="agR-vr-Le2"/>
+                            <constraint firstItem="ce6-Wi-wk4" firstAttribute="leading" secondItem="SgP-DR-cyl" secondAttribute="trailing" constant="25" id="agR-vr-Le2"/>
                             <constraint firstItem="h25-q0-rtl" firstAttribute="top" secondItem="l5l-JR-LKA" secondAttribute="bottom" constant="8" id="chM-VH-Q4E"/>
                             <constraint firstAttribute="trailing" secondItem="3ev-mN-FNd" secondAttribute="trailing" constant="16" id="eXe-ee-lc5"/>
                             <constraint firstItem="kfi-Aj-Ca6" firstAttribute="height" secondItem="3ev-mN-FNd" secondAttribute="height" id="fDA-g1-Gqw"/>
@@ -1360,9 +1347,9 @@
                             <constraint firstItem="h25-q0-rtl" firstAttribute="leading" secondItem="Nmx-0C-BXz" secondAttribute="leading" constant="12" id="nCO-hS-Yrb"/>
                             <constraint firstItem="rmH-4l-Hd8" firstAttribute="leading" secondItem="Nmx-0C-BXz" secondAttribute="leadingMargin" constant="9" id="p62-N7-0hC"/>
                             <constraint firstItem="h25-q0-rtl" firstAttribute="centerY" secondItem="Nmx-0C-BXz" secondAttribute="centerY" constant="-113.5" id="qcw-DW-GkY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ce6-Wi-wk4" secondAttribute="trailing" constant="4" id="uCf-g9-EfY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ce6-Wi-wk4" secondAttribute="trailing" constant="9" id="uCf-g9-EfY"/>
                             <constraint firstItem="Cgg-GO-wHE" firstAttribute="top" secondItem="kfi-Aj-Ca6" secondAttribute="bottom" constant="28" id="upb-Hq-Feq"/>
-                            <constraint firstItem="QUJ-kn-Ubh" firstAttribute="top" secondItem="crD-Yc-EK9" secondAttribute="bottom" constant="136" id="vtj-sL-nJM"/>
+                            <constraint firstItem="QUJ-kn-Ubh" firstAttribute="top" secondItem="crD-Yc-EK9" secondAttribute="bottom" constant="76" id="vtj-sL-nJM"/>
                             <constraint firstItem="SgP-DR-cyl" firstAttribute="leading" secondItem="Nmx-0C-BXz" secondAttribute="leadingMargin" id="wIL-7x-3Mp"/>
                             <constraint firstItem="Cgg-GO-wHE" firstAttribute="leading" secondItem="Nmx-0C-BXz" secondAttribute="leadingMargin" constant="16" id="wz4-5b-ZuJ"/>
                         </constraints>
@@ -1521,7 +1508,7 @@
                                 <color key="backgroundColor" red="0.9137254901960784" green="0.93725490196078431" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter this wallet's recovery phrase to wipe it and start/recover another. Your current balance remains on this phrase." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="289" translatesAutoresizingMaskIntoConstraints="NO" id="YC6-rN-4P5">
-                                <rect key="frame" x="43" y="64" width="289" height="62"/>
+                                <rect key="frame" x="43.5" y="64" width="288.5" height="61.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1529,7 +1516,7 @@
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3D6-D7-2JP">
-                                <rect key="frame" x="12" y="137.5" width="351" height="299.5"/>
+                                <rect key="frame" x="12" y="137" width="351" height="300"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.67000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -2354,14 +2341,14 @@ Based on LoafWallet
                                         <rect key="frame" x="130" y="90" width="109" height="109"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="start a new wallet by generating a wallet recovery phrase" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="wDZ-DN-szv">
-                                        <rect key="frame" x="61" y="243" width="254" height="31"/>
+                                        <rect key="frame" x="61.5" y="243" width="253.5" height="31"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="if you ever lose your phone, you will need this phrase to recover your wallet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="dX6-jg-5IA">
-                                        <rect key="frame" x="50" y="288" width="277" height="26"/>
+                                        <rect key="frame" x="50.5" y="288" width="276.5" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

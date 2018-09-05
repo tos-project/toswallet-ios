@@ -45,12 +45,10 @@
 #define CIRCLE  @"\xE2\x97\x8C" // dotted circle (utf-8)
 #define DOT     @"\xE2\x97\x8F" // black circle (utf-8)
 
-#define UNSPENT_URL          @"https://toswallet.tosblock.com/api/v1/addrs/utxo1" // https://insight.litecore.io/api/addrs/utxo
-#define UNSPENT_FAILOVER_URL @"https://toswallet.tosblock.com/api/v1/addrs/utxo2" // https://node-2.insight.litecore.io/api/addrs/utxo
-#define TICKER_URL           @"https://toswallet.tosblock.com/api/v1/ticker" // https://litecoin.com/api/v1/ticker
-//#define TICKER_URL           @"http://toswallet.tosblock.com/api/v1/update" // https://litecoin.com/api/v1/ticker
-
-#define TICKER_FAILOVER_URL  @"https://toswallet.tosblock.com/api/v1/info" // https://www.loshan.co.uk/api/v1/info
+#define UNSPENT_URL          @"http://toswallet.tosblock.com/api/v1/addrs/utxo1"
+#define UNSPENT_FAILOVER_URL @"http://toswallet.tosblock.com/api/v1/addrs/utxo2"
+#define TICKER_URL           @"http://toswallet.tosblock.com/api/v1/ticker"
+#define TICKER_FAILOVER_URL  @"http://toswallet.tosblock.com/api/v1/info"
 
 #define SEED_ENTROPY_LENGTH   (128/8)
 #define SEC_ATTR_SERVICE      @"com.tosblock.toswallet"

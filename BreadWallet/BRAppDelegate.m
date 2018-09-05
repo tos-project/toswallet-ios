@@ -73,9 +73,7 @@
     [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:@DF_IS_RECOVER_MENU];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
-//     [UINavigationBar appearance].backgroundColor = [UIColor redColor] ;
-    //서버에서 최신 버전데이터 가져오기
-    [self checkVersion];
+    [self checkVersion]; // get the latest data from server
     
     // use background fetch to stay synced with the blockchain
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
@@ -133,29 +131,25 @@
     NSURLResponse *res;
     NSError *err;
     NSData *d = [NSURLConnection sendSynchronousRequest:req returningResponse:&res error:&err];
-    
     NSString *data = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
     NSDictionary *returnMessage = [NSJSONSerialization JSONObjectWithData: [data dataUsingEncoding:NSUTF8StringEncoding]options: NSJSONReadingMutableContainers error:&err];
-    NSLog(@"serverData %@", d);
+    
+    NSLog(@"data1 %@", d);
     if (!err) {
-        NSLog(@"data :%@",data);
-        /*
-         "version": "1.2.3",
-         "description": "latest version of iOS toswallet.",
-         "forceUpdate": "false",
-         "notifyMe1ssage": "TEST 테스트 1234\n테스트",
-         "updateURL": "toswallet.tosblock.com/downloads/latest/"
-         */
-        //DF_UPDATE_URL
+        NSLog(@"data2 :%@",data);
+
         NSString * receiveVersion = [returnMessage objectForKey:@"version"];
         NSString * isForceUpdate = [returnMessage objectForKey:@"forceUpdate"];
         NSString * updateURL = [returnMessage objectForKey:@"updateURL"];
+        NSString * limitAddress = [returnMessage objectForKey:@"limitAddress"];
+        NSString * transferableDate = [returnMessage objectForKey:@"transferableDate"];
         
         [[NSUserDefaults standardUserDefaults] setObject:updateURL forKey:@DF_UPDATE_URL];
+        [[NSUserDefaults standardUserDefaults] setObject:limitAddress forKey:@DF_LIMIT_ADDRESS];
+        [[NSUserDefaults standardUserDefaults] setObject:transferableDate forKey:@DF_TRANSFERABLE_DATE];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        //현재 앱버전과 서버 버전이 틀리면
-        //즉 최신버전이 아니면
+        // if the app version is a difference with a server version that means it is not the latest version.
         if ([appVersion isEqualToString:receiveVersion] == FALSE) {
             if ([isForceUpdate isEqualToString:@"false"] == TRUE) {
                 [self showAlertForceUpdateFalse:returnMessage];
