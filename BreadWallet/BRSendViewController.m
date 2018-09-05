@@ -1042,6 +1042,49 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
     [self.navigationController presentViewController:self.scanController animated:YES completion:nil];
 }
 
+- (NSInteger)formattedDateCompareToNow:(NSDate *)date
+{
+    NSDateFormatter *mdf = [[NSDateFormatter alloc] init];
+    [mdf setDateFormat:@"yyyy-MM-dd"];
+    NSDate *midnight = [mdf dateFromString:[mdf stringFromDate:date]];
+    NSInteger dayDiff = (int)[midnight timeIntervalSinceNow] / (60*60*24);
+    return dayDiff;
+}
+
+- (bool)checkSendLimit:(bool)isSendLimit
+{
+    BRWalletManager *manager = [BRWalletManager sharedInstance];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSString *limitAddress = [[NSUserDefaults standardUserDefaults] objectForKey:@DF_LIMIT_ADDRESS];
+    NSString *transferableDate = [[NSUserDefaults standardUserDefaults] objectForKey:@DF_TRANSFERABLE_DATE];
+    NSArray *allReceiveAddrStr = [manager.wallet.allReceiveAddresses allObjects];
+    NSString *allReceiveAddr = [allReceiveAddrStr componentsJoinedByString:@","];
+    NSArray * allReceiveAddrArr = [allReceiveAddr componentsSeparatedByString:@","];
+    NSArray * limitAddressArr = [limitAddress componentsSeparatedByString:@","];
+    
+    unsigned long limitAddressNum = [limitAddressArr count];
+    unsigned long allReceiveAddrNum = [allReceiveAddrArr count];
+
+    for (int i=0; i<allReceiveAddrNum; i++){
+        NSString * compare_mineAddr = [allReceiveAddrArr objectAtIndex:i];
+        for (int x=0; x<limitAddressNum; x++){
+            NSString * compare_limitAddr = [limitAddressArr objectAtIndex:x];
+            if ([compare_mineAddr isEqualToString:compare_limitAddr]){
+                NSDate *updateDate = [dateFormatter dateFromString:transferableDate];
+                NSInteger date = [self formattedDateCompareToNow:updateDate];
+                if (date >= 0){
+                    NSString *alertMessage = [NSString stringWithFormat:@"You can't remit T.OS until %@", transferableDate];
+                    [[[UIAlertView alloc] initWithTitle:alertMessage message:nil delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles:nil] show];
+                    return FALSE;
+                }
+            }
+        }
+    }
+    return TRUE;
+}
+
 - (IBAction)tapPay:(id)sender {
     // TODO:- Test that this works
     // Clear up stuff that's not needed.
@@ -1058,8 +1101,15 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
             return;
         }
         
-        [BREventManager saveEvent:@"amount:pay"];
-        [BREventManager saveEvent:@"send:pay_clipboard"];
+        bool isSendLimit = TRUE;
+        isSendLimit = [self checkSendLimit:isSendLimit];
+        
+        if (isSendLimit == FALSE){
+            return;
+        }else{
+            [BREventManager saveEvent:@"amount:pay"];
+            [BREventManager saveEvent:@"send:pay_clipboard"];
+        }
         
         NSString *str = [[UIPasteboard generalPasteboard].string
                          stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
