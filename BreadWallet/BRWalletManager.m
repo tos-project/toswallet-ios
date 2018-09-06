@@ -269,7 +269,7 @@ static NSDictionary *getKeychainDict(NSString *key, NSError **error)
     self.format.negativeFormat = [self.format.positiveFormat
                                   stringByReplacingCharactersInRange:[self.format.positiveFormat rangeOfString:@"#"]
                                   withString:@"-#"];
-    self.format.currencyCode = @"TOS";
+    self.format.currencyCode = @"TOSC";
     self.format.currencySymbol = BITS NARROW_NBSP;
     self.format.maximumFractionDigits = DF_MAXIMUM_FRACTION_DIGITS;
     self.format.minimumFractionDigits = 0; // iOS 8 bug, minimumFractionDigits now has to be set after currencySymbol

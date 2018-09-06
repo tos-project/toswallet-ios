@@ -179,7 +179,7 @@ static NSString *dateFormat(NSString *template)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         self.transactions = @[tx, tx, tx, tx, tx, tx];
         [self.tableView reloadData];
-        self.navigationItem.title = [NSString stringWithFormat:@"%@  TOS", [manager stringForAmount:42980000]];
+        self.navigationItem.title = [NSString stringWithFormat:@"%@  TOSC", [manager stringForAmount:42980000]];
     });
 
     return;
@@ -218,7 +218,7 @@ static NSString *dateFormat(NSString *template)
 
                                                                if (! [self.navigationItem.title isEqual:NSLocalizedString(@"syncing...", nil)]) {
                                                                    if (! manager.didAuthenticate) self.navigationItem.titleView = self.logo;
-                                                                   self.navigationItem.title = [NSString stringWithFormat:@"%@  TOS",
+                                                                   self.navigationItem.title = [NSString stringWithFormat:@"%@  TOSC",
                                                                                                 [manager stringForAmount:manager.wallet.balance]];
                                                                }
 
@@ -258,7 +258,7 @@ static NSString *dateFormat(NSString *template)
         [[NSNotificationCenter defaultCenter] addObserverForName:BRPeerManagerSyncFinishedNotification object:nil
                                                            queue:nil usingBlock:^(NSNotification *note) {
                                                                if (! manager.didAuthenticate) self.navigationItem.titleView = self.logo;
-                                                               self.navigationItem.title = [NSString stringWithFormat:@"%@  TOS",
+                                                               self.navigationItem.title = [NSString stringWithFormat:@"%@  TOSC",
                                                                                             [manager stringForAmount:manager.wallet.balance]];
                                                            }];
     }
@@ -268,7 +268,7 @@ static NSString *dateFormat(NSString *template)
         [[NSNotificationCenter defaultCenter] addObserverForName:BRPeerManagerSyncFailedNotification object:nil
                                                            queue:nil usingBlock:^(NSNotification *note) {
                                                                if (! manager.didAuthenticate) self.navigationItem.titleView = self.logo;
-                                                               self.navigationItem.title = [NSString stringWithFormat:@"%@  TOS",
+                                                               self.navigationItem.title = [NSString stringWithFormat:@"%@  TOSC",
                                                                                             [manager stringForAmount:manager.wallet.balance]];
                                                            }];
     }
