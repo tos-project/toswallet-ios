@@ -12,30 +12,30 @@
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>toscoin Payment Request</string>
+			<string>tosc Payment Request</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>toscoin.paymentrequest</string>
+				<string>tosc.paymentrequest</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>toscoin Payment</string>
+			<string>tosc Payment</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>toscoin.payment</string>
+				<string>tosc.payment</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>toscoin Payment ACK</string>
+			<string>tosc Payment ACK</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>toscoin.paymentack</string>
+				<string>tosc.paymentack</string>
 			</array>
 		</dict>
 	</array>
@@ -134,9 +134,9 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>toscoin Payment Request</string>
+			<string>tosc Payment Request</string>
 			<key>UTTypeIdentifier</key>
-			<string>toscoin.paymentrequest</string>
+			<string>tosc.paymentrequest</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.mime-type</key>
@@ -149,13 +149,13 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>toscoin Payment</string>
+			<string>tosc Payment</string>
 			<key>UTTypeIdentifier</key>
-			<string>toscoin.payment</string>
+			<string>tosc.payment</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.mime-type</key>
-				<string>application/toscoin-payment</string>
+				<string>application/tosc-payment</string>
 			</dict>
 		</dict>
 		<dict>
@@ -164,13 +164,13 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>toscoin Payment ACK</string>
+			<string>tosc Payment ACK</string>
 			<key>UTTypeIdentifier</key>
-			<string>toscoin.paymentack</string>
+			<string>tosc.paymentack</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.mime-type</key>
-				<string>application/toscoin-paymentack</string>
+				<string>application/tosc-paymentack</string>
 			</dict>
 		</dict>
 	</array>
