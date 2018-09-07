@@ -38,7 +38,7 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 
 #define QR_TIP      NSLocalizedString(@"Let others scan this QR code to get your TOSC address. Anyone can send "\
-                    "toscoins to your wallet by transferring them to your address.", nil)
+                    "TOSC to your wallet by transferring them to your address.", nil)
 #define ADDRESS_TIP NSLocalizedString(@"This is your TOSC address. Tap to copy it or send it by email or sms. The "\
                     "address will change each time you receive funds, but old addresses always work.", nil)
 
@@ -265,7 +265,7 @@
     BOOL req = (_paymentRequest) ? YES : NO;
     UIActionSheet *actionSheet = [UIActionSheet new];
 
-    actionSheet.title = [NSString stringWithFormat:NSLocalizedString(@"Receive TOSCs at this address: %@", nil),
+    actionSheet.title = [NSString stringWithFormat:NSLocalizedString(@"Receive TOSC at this address: %@", nil),
                self.paymentAddress];
     actionSheet.delegate = self;
     [actionSheet addButtonWithTitle:(req) ? NSLocalizedString(@"copy request to clipboard", nil) :

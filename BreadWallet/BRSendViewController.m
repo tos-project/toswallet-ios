@@ -532,7 +532,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
         self.request = protoReq;
         self.okAddress = address;
         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WARNING", nil)
-          message:NSLocalizedString(@"\nADDRESS ALREADY USED\n\ntoscoin addresses are intended for single use only\n\n"
+          message:NSLocalizedString(@"\nADDRESS ALREADY USED\n\nTOSC addresses are intended for single use only\n\n"
                                     "re-use reduces privacy for both you and the recipient and can result in loss if "
                                     "the recipient doesn't directly control the address", nil)
           delegate:self cancelButtonTitle:nil

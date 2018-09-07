@@ -523,7 +523,7 @@ _switch_cell:
     [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WARNING", nil)
       message:[NSString stringWithFormat:@"\n%@\n\n%@\n\n%@\n",
                [NSLocalizedString(@"\nDO NOT let anyone see your recovery\n"
-                                  "phrase or they can spend your toscoins.\n", nil)
+                                  "phrase or they can spend your TOSC.\n", nil)
                 stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]],
                [NSLocalizedString(@"\nNEVER type your recovery phrase into\n"
                                   "password managers or elsewhere.\n"
