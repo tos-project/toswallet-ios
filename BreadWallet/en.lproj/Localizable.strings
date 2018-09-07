@@ -44,10 +44,10 @@
 "\nallow camera access in\nSettings->Privacy->Camera->%@" = "\nallow camera access in\nSettings->Privacy->Camera->%@";
 
 /* No comment provided by engineer. */
-"\nDO NOT let anyone see your recovery phrase or they can spend your toscoins.\n\nNEVER type your recovery phrase into password managers or elsewhere. Other devices may be infected.\n" = "\nDO NOT let anyone see your recovery phrase or they can spend your toscoins.\n\nNEVER type your recovery phrase into password managers or elsewhere. Other devices may be infected.\n";
+"\nDO NOT let anyone see your recovery phrase or they can spend your TOSC.\n\nNEVER type your recovery phrase into password managers or elsewhere. Other devices may be infected.\n" = "\nDO NOT let anyone see your recovery phrase or they can spend your TOSC.\n\nNEVER type your recovery phrase into password managers or elsewhere. Other devices may be infected.\n";
 
 /* No comment provided by engineer. */
-"\nDO NOT let anyone see your recovery\nphrase or they can spend your toscoins.\n" = "\nDO NOT let anyone see your recovery\nphrase or they can spend your toscoins.\n";
+"\nDO NOT let anyone see your recovery\nphrase or they can spend your TOSC.\n" = "\nDO NOT let anyone see your recovery\nphrase or they can spend your TOSC.\n";
 
 /* No comment provided by engineer. */
 "\nDO NOT take a screenshot.\nScreenshots are visible to other apps\nand devices.\n" = "\nDO NOT take a screenshot.\nScreenshots are visible to other apps\nand devices.\n";
@@ -182,10 +182,10 @@
 "current wallet passcode" = "current wallet passcode";
 
 /* No comment provided by engineer. */
-"DEVICE SECURITY COMPROMISED\nAny 'jailbreak' app can access any other app's keychain data (and steal your bitcoins)." = "DEVICE SECURITY COMPROMISED\nAny 'jailbreak' app can access any other app's keychain data (and steal your TOSCs).";
+"DEVICE SECURITY COMPROMISED\nAny 'jailbreak' app can access any other app's keychain data (and steal your bitcoins)." = "DEVICE SECURITY COMPROMISED\nAny 'jailbreak' app can access any other app's keychain data (and steal your TOSC).";
 
 /* No comment provided by engineer. */
-"DEVICE SECURITY COMPROMISED\nAny 'jailbreak' app can access any other app's keychain data (and steal your bitcoins). Wipe this wallet immediately and restore on a secure device." = "DEVICE SECURITY COMPROMISED\nAny 'jailbreak' app can access any other app's keychain data (and steal your TOSCs). Wipe this wallet immediately and restore on a secure device.";
+"DEVICE SECURITY COMPROMISED\nAny 'jailbreak' app can access any other app's keychain data (and steal your bitcoins). Wipe this wallet immediately and restore on a secure device." = "DEVICE SECURITY COMPROMISED\nAny 'jailbreak' app can access any other app's keychain data (and steal your TOSC). Wipe this wallet immediately and restore on a secure device.";
 
 /* No comment provided by engineer. */
 "do it later" = "do it later";
@@ -239,7 +239,7 @@
 "INVALID" = "INVALID";
 
 /* No comment provided by engineer. */
-"Let others scan this QR code to get your bitcoin address. Anyone can send bitcoins to your wallet by transferring them to your address." = "Let others scan this QR code to get your TOSC address. Anyone can send TOSCs to your wallet by transferring them to your address.";
+"Let others scan this QR code to get your bitcoin address. Anyone can send bitcoins to your wallet by transferring them to your address." = "Let others scan this QR code to get your TOSC address. Anyone can send TOSC to your wallet by transferring them to your address.";
 
 /* No comment provided by engineer. */
 "minute" = "minute";
@@ -314,7 +314,7 @@
 "post-dated" = "post-dated";
 
 /* No comment provided by engineer. */
-"Receive bitcoins at this address: %@" = "Receive TOSCs at this address: %@";
+"Receive bitcoins at this address: %@" = "Receive TOSC at this address: %@";
 
 /* No comment provided by engineer. */
 "received" = "received";
@@ -533,7 +533,7 @@
 "Easily send TOSC anywhere in the world with TosWallet's live currency conversion rates, and QR scanner for quick on-the-go payments." = "Easily send TOSC anywhere in the world with TosWallet's live currency conversion rates, and QR scanner for quick on-the-go payments.";
 
 /* No comment provided by engineer. */
-"Receive TOSCs with your receive address. Share you TOSC Address with others, and request a payment. Your TOSC address can be copied to your clipboard, sent via email and shared via other forms of social media." = "Receive TOSCs with your receive address. Share you TOSC Address with others, and request a payment. Your TOSC address can be copied to your clipboard, sent via email and shared via other forms of social media.";
+"Receive TOSC with your receive address. Share you TOSC Address with others, and request a payment. Your TOSC address can be copied to your clipboard, sent via email and shared via other forms of social media." = "Receive TOSC with your receive address. Share you TOSC Address with others, and request a payment. Your TOSC address can be copied to your clipboard, sent via email and shared via other forms of social media.";
 
 /* No comment provided by engineer. */
 "Browse through your transaction history, secured with your passcode. This is not visible to others, unless they possess your TosWallet passcode. Find indepth details about every transaction." = "Browse through your transaction history, secured with your passcode. This is  not visible to others, unless they possess your TosWallet passcode. Find indepth details about every transaction.";
