@@ -82,7 +82,7 @@
     NSURL *url = [NSURL URLWithString:s];
 
     if (! url || ! url.scheme) {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"TOSC://%@", s]];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"TosCoin://%@", s]]; // QR Url scheme: received part
     }
     else if (! url.host && url.resourceSpecifier) {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@", url.scheme, url.resourceSpecifier]];
@@ -90,7 +90,7 @@
 
     self.scheme = url.scheme;
 
-    if ([url.scheme isEqual:@"TOSC"]) {
+    if ([url.scheme isEqual:@"TosCoin"]) { // QR Url scheme: received&scan poart
         self.paymentAddress = url.host;
 
         //TODO: correctly handle unknown but required url arguments (by reporting the request invalid)
@@ -127,12 +127,12 @@
 
 - (NSString *)string
 {
-    if (! [self.scheme isEqual:@"TOSC"]) return self.r;
+    if (! [self.scheme isEqual:@"TosCoin"]) return self.r; // QR Url scheme: Generate eligible shape of QR
 
     
     NSLog(@"self.amount :%llu",self.amount);
     
-    NSMutableString *s = [NSMutableString stringWithString:@"TOSC:"];
+    NSMutableString *s = [NSMutableString stringWithString:@"TosCoin:"]; // QR Url scheme: received part
     NSMutableArray *q = [NSMutableArray array];
     NSMutableCharacterSet *charset = [[NSCharacterSet URLQueryAllowedCharacterSet] mutableCopy];
 
