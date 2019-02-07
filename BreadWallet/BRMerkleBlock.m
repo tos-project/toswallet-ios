@@ -26,6 +26,7 @@
 //  THE SOFTWARE.
 
 #import "BRMerkleBlock.h"
+#import "BRPeerManager.h"
 #import "NSMutableData+Bitcoin.h"
 #import "NSData+Bitcoin.h"
 
@@ -145,11 +146,35 @@ totalTransactions:(uint32_t)totalTransactions hashes:(NSData *)hashes flags:(NSD
     return self;
 }
 
+- (BOOL) checkProofOfStake{
+    // if proof of stake was enforced on the chain, Set the variable isChainEnforcedPOS to TRUE.
+    // the variable of nLastProofOfWorkHeight is a height that lastly enforced proof of work.
+    static const BOOL isChainEnforcedPOS = FALSE;
+    static const int nLastProofOfWorkHeight = -1;
+    static BOOL isCheckedLastProofOfWorkValid = FALSE;
+    int nSyncedBlockHeight = [BRPeerManager sharedInstance].lastBlockHeight;
+    
+    if (isCheckedLastProofOfWorkValid){
+        if(isChainEnforcedPOS && nLastProofOfWorkHeight <= nSyncedBlockHeight){
+            return TRUE;
+        }
+    }
+    
+    if (nSyncedBlockHeight == nLastProofOfWorkHeight) isCheckedLastProofOfWorkValid = TRUE;
+    
+    return FALSE;
+}
+
 // true if merkle tree and timestamp are valid, and proof-of-work matches the stated difficulty target
 // NOTE: This only checks if the block difficulty matches the difficulty target in the header. It does not check if the
 // target is correct for the block's height in the chain. Use verifyDifficultyFromPreviousBlock: for that.
 - (BOOL)isValid
 {
+    // checking process of proof of stake
+    BOOL isSkipCheckProofOfWork = FALSE;
+    isSkipCheckProofOfWork = [self checkProofOfStake];
+    if (isSkipCheckProofOfWork) return YES;
+    
     // target is in "compact" format, where the most significant byte is the size of resulting value in bytes, the next
     // bit is the sign, and the remaining 23bits is the value after having been right shifted by (size - 3)*8 bits
     static const uint32_t maxsize = MAX_PROOF_OF_WORK >> 24, maxtarget = MAX_PROOF_OF_WORK & 0x00ffffffu;
