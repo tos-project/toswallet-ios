@@ -86,7 +86,7 @@
         usingBlock:^(NSNotification *note) {
             if ([BRPeerManager sharedInstance].syncProgress < 1.0) return; // wait for sync before updating balance
 
-            self.navigationItem.title = [NSString stringWithFormat:@"%@   TOS",
+            self.navigationItem.title = [NSString stringWithFormat:@"%@   TOSC",
                                          [manager stringForAmount:manager.wallet.balance]];
         }];
     

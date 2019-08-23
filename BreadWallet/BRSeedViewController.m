@@ -162,7 +162,7 @@ int tapCount = 0;
     
     
     self.titleLabel.text = NSLocalizedString(@"Pay", nil);
-    self.descriptionLabel.text = NSLocalizedString(@"Easily send TosCoin anywhere in the world with TosWallet's live currency conversion rates, and QR scanner for quick on-the-go payments.", nil);
+    self.descriptionLabel.text = NSLocalizedString(@"Easily send TOSC anywhere in the world with TosWallet's live currency conversion rates, and QR scanner for quick on-the-go payments.", nil);
     
     [self.progessButton addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
     
@@ -285,7 +285,7 @@ int tapCount = 0;
         self.bgImageView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
         
         self.titleLabel.text = NSLocalizedString(@"Receive", nil);
-        self.descriptionLabel.text = NSLocalizedString(@"Receive Toscoins with your receive address. Share you Toscoin Address with others, and request a payment. Your Toscoin address can be copied to your clipboard, sent via email and shared via other forms of social media.", nil);
+        self.descriptionLabel.text = NSLocalizedString(@"Receive TOSC with your receive address. Share you TOSC Address with others, and request a payment. Your TOSC address can be copied to your clipboard, sent via email and shared via other forms of social media.", nil);
     } else if (tapCount == 2) {
 
         self.bgImageView.image = [UIImage imageNamed:@"create_history_bg"];

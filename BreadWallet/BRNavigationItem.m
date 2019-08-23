@@ -87,7 +87,7 @@ static void *kTitleViewStateObservingContext = &kTitleViewStateObservingContext;
 		UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue-Medium" size:23.0];
 		UIFont *smallFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.0];
 		NSString *simpleString = self.title;
-		NSRange range = [simpleString rangeOfString:@"  TOS"];
+		NSRange range = [simpleString rangeOfString:@"  TOSC"];
 		range.length = (simpleString.length - range.location);
 		
 		NSMutableAttributedString *stylizedString = [[NSMutableAttributedString alloc] initWithString:simpleString];

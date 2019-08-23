@@ -12,30 +12,30 @@
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>toscoin Payment Request</string>
+			<string>tosc Payment Request</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>toscoin.paymentrequest</string>
+				<string>tosc.paymentrequest</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>toscoin Payment</string>
+			<string>tosc Payment</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>toscoin.payment</string>
+				<string>tosc.payment</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>toscoin Payment ACK</string>
+			<string>tosc Payment ACK</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>toscoin.paymentack</string>
+				<string>tosc.paymentack</string>
 			</array>
 		</dict>
 	</array>
@@ -50,7 +50,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.4.2</string>
+	<string>1.5.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -59,10 +59,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>TosCoin</string>
+			<string>TOSC</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>TosCoin</string>
+				<string>TOSC</string>
 			</array>
 		</dict>
 		<dict>
@@ -99,12 +99,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to scan barcodes</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Enabling Face ID allows you quick and secure access to your account.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We will use your location to determine where you are. Your location will never be recorded or shared with anyone.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Unused</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>Enabling Face ID allows you quick and secure access to your account.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -134,13 +134,13 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>toscoin Payment Request</string>
+			<string>tosc Payment Request</string>
 			<key>UTTypeIdentifier</key>
-			<string>toscoin.paymentrequest</string>
+			<string>tosc.paymentrequest</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.mime-type</key>
-				<string>application/toscoin-paymentrequest</string>
+				<string>application/TOSC-paymentrequest</string>
 			</dict>
 		</dict>
 		<dict>
@@ -149,13 +149,13 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>toscoin Payment</string>
+			<string>tosc Payment</string>
 			<key>UTTypeIdentifier</key>
-			<string>toscoin.payment</string>
+			<string>tosc.payment</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.mime-type</key>
-				<string>application/toscoin-payment</string>
+				<string>application/tosc-payment</string>
 			</dict>
 		</dict>
 		<dict>
@@ -164,13 +164,13 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>toscoin Payment ACK</string>
+			<string>tosc Payment ACK</string>
 			<key>UTTypeIdentifier</key>
-			<string>toscoin.paymentack</string>
+			<string>tosc.paymentack</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.mime-type</key>
-				<string>application/toscoin-paymentack</string>
+				<string>application/tosc-paymentack</string>
 			</dict>
 		</dict>
 	</array>

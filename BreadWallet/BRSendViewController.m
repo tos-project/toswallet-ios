@@ -43,10 +43,10 @@
 #import "BREventManager.h"
 #import "breadwallet-Swift.h"
 
-#define SCAN_TIP      NSLocalizedString(@"Scan someone else's QR code to get their TosCoin address. "\
+#define SCAN_TIP      NSLocalizedString(@"Scan someone else's QR code to get their TOSC address. "\
                                          "You can send a payment to anyone with an address.", nil)
-#define CLIPBOARD_TIP NSLocalizedString(@"TosCoin addresses can also be copied to the clipboard. "\
-                                         "A toscoin address always starts with '1' or '3'.", nil)
+#define CLIPBOARD_TIP NSLocalizedString(@"TOSC addresses can also be copied to the clipboard. "\
+                                         "A TOSC address always starts with '1' or '3'.", nil)
 
 #define LOCK @"\xF0\x9F\x94\x92" // unicode lock symbol U+1F512 (utf-8)
 #define REDX @"\xE2\x9D\x8C"     // unicode cross mark U+274C, red x emoji (utf-8)
@@ -298,15 +298,15 @@ static NSString *sanitizeString(NSString *s)
                                              ([NSURL URLWithString:xsuccess].query.length > 0) ? @"&" : @"?",
                                              manager.wallet.receiveAddress]];
         }
-        else if (([url.host isEqual:@"toscoin-uri"] || [url.path isEqual:@"/toscoin-uri"]) && uri &&
-                 [[NSURL URLWithString:uri].scheme isEqual:@"TosCoin"]) {
+        else if (([url.host isEqual:@"TOSC-uri"] || [url.path isEqual:@"/TOSC-uri"]) && uri &&
+                 [[NSURL URLWithString:uri].scheme isEqual:@"TOSC"]) {
             if (xsuccess) self.callback = [NSURL URLWithString:xsuccess];
             [self handleURL:[NSURL URLWithString:uri]];
         }
         
         if (callback) [[UIApplication sharedApplication] openURL:callback];
     }
-    else if ([url.scheme isEqual:@"TosCoin"]) {
+    else if ([url.scheme isEqual:@"TOSC"]) {
         [self confirmRequest:[BRPaymentRequest requestWithURL:url]];
     } else if ([BRBitID isBitIDURL:url]) {
         [self handleBitIDURL:url];
@@ -338,7 +338,7 @@ static NSString *sanitizeString(NSString *s)
                 
                 if (error) {
                     [[[UIAlertView alloc]
-                      initWithTitle:NSLocalizedString(@"couldn't transmit payment to toscoin network", nil)
+                      initWithTitle:NSLocalizedString(@"couldn't transmit payment to TOSC network", nil)
                       message:error.localizedDescription delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil)
                       otherButtonTitles:nil] show];
                 }
@@ -419,7 +419,7 @@ static NSString *sanitizeString(NSString *s)
     };
     
     NSString *message = [NSString stringWithFormat:
-                         NSLocalizedString(@"%@ is requesting authentication using your toscoin wallet.", nil),
+                         NSLocalizedString(@"%@ is requesting authentication using your TOSC wallet.", nil),
                          bitid.siteName];
     UIAlertController *alertController =
         [UIAlertController alertControllerWithTitle:NSLocalizedString(@"BitID Authentication Request", nil)
@@ -467,7 +467,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
             [self confirmSweep:request.paymentAddress];
         }
         else {
-            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"not a valid toscoin address", nil)
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"not a valid TOSC address", nil)
               message:request.paymentAddress delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil)
               otherButtonTitles:nil] show];
             [self cancel:nil];
@@ -532,7 +532,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
         self.request = protoReq;
         self.okAddress = address;
         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WARNING", nil)
-          message:NSLocalizedString(@"\nADDRESS ALREADY USED\n\ntoscoin addresses are intended for single use only\n\n"
+          message:NSLocalizedString(@"\nADDRESS ALREADY USED\n\nTOSC addresses are intended for single use only\n\n"
                                     "re-use reduces privacy for both you and the recipient and can result in loss if "
                                     "the recipient doesn't directly control the address", nil)
           delegate:self cancelButtonTitle:nil
@@ -566,14 +566,14 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
         }
         else amountController.to = address;
 
-        amountController.navigationItem.title = [NSString stringWithFormat:@"%@  TOS",
+        amountController.navigationItem.title = [NSString stringWithFormat:@"%@  TOSC",
                                                  [manager stringForAmount:manager.wallet.balance]];
         [self.navigationController pushViewController:amountController animated:YES];
         return;
     }
     else if (amount < TX_MIN_OUTPUT_AMOUNT) {
         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"couldn't make payment", nil)
-          message:[NSString stringWithFormat:NSLocalizedString(@"toscoin payments can't be less than %@", nil),
+          message:[NSString stringWithFormat:NSLocalizedString(@"TOSC payments can't be less than %@", nil),
                    [manager stringForAmount:TX_MIN_OUTPUT_AMOUNT]] delegate:nil
           cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles:nil] show];
         [self cancel:nil];
@@ -581,7 +581,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
     }
     else if (outputTooSmall) {
         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"couldn't make payment", nil)
-          message:[NSString stringWithFormat:NSLocalizedString(@"toscoin transaction outputs can't be less than %@",
+          message:[NSString stringWithFormat:NSLocalizedString(@"TOSC transaction outputs can't be less than %@",
                                                                nil), [manager stringForAmount:TX_MIN_OUTPUT_AMOUNT]]
           delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles:nil] show];
         [self cancel:nil];
@@ -646,7 +646,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
 
                 if (amount > 0 && amount < self.amount) {
                     [[[UIAlertView alloc]
-                      initWithTitle:NSLocalizedString(@"insufficient funds for toscoin network fee", nil)
+                      initWithTitle:NSLocalizedString(@"insufficient funds for TOSC network fee", nil)
                       message:[NSString stringWithFormat:NSLocalizedString(@"reduce payment amount by\n%@?", nil),
                                [manager stringForAmount:self.amount - amount]] delegate:self
                       cancelButtonTitle:NSLocalizedString(@"cancel", nil)
@@ -656,7 +656,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
                 }
                 else {
                     [[[UIAlertView alloc]
-                      initWithTitle:NSLocalizedString(@"insufficient funds for toscoin network fee", nil) message:nil
+                      initWithTitle:NSLocalizedString(@"insufficient funds for TOSC network fee", nil) message:nil
                       delegate:self cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles:nil] show];
                 }
             }
@@ -673,7 +673,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
 
     if (! [manager.wallet signTransaction:tx withPrompt:prompt]) {
         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"couldn't make payment", nil)
-          message:NSLocalizedString(@"error signing toscoin transaction", nil) delegate:nil
+          message:NSLocalizedString(@"error signing TOSC transaction", nil) delegate:nil
           cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles:nil] show];
     }
     
@@ -817,7 +817,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
                 self.sweepTx = tx;
 
                 NSString *alertFmt = NSLocalizedString(@"Send %@ from this private key into your wallet? "
-                                                       "The toscoin network will receive a fee of %@.", nil);
+                                                       "The TOSC network will receive a fee of %@.", nil);
                 NSString *alertMsg = [NSString stringWithFormat:alertFmt, [manager stringForAmount:amount], [manager stringForAmount:fee]];
                 [[[UIAlertView alloc] initWithTitle:@"" message:alertMsg delegate:self
                   cancelButtonTitle:NSLocalizedString(@"cancel", nil)
@@ -952,7 +952,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
                 text = (req.label.length > 0) ? sanitizeString(req.label) : req.paymentAddress;
                 break;
             }
-            else if ([s hasPrefix:@"TosCoin:"]) {
+            else if ([s hasPrefix:@"TOSC:"]) {
                 text = sanitizeString(s);
                 break;
             }
@@ -985,7 +985,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
         if (data.length == sizeof(UInt256) && [manager.wallet transactionForHash:*(UInt256 *)data.bytes]) continue;
         
         if ([req.paymentAddress isValidBitcoinAddress] || [str isValidBitcoinPrivateKey] ||
-            [str isValidBitcoinBIP38Key] || (req.r.length > 0 && [req.scheme isEqual:@"TosCoin"])) {
+            [str isValidBitcoinBIP38Key] || (req.r.length > 0 && [req.scheme isEqual:@"TOSC"])) {
             [self performSelector:@selector(confirmRequest:) withObject:req afterDelay:0.1];// delayed to show highlight
             return;
         }
@@ -995,7 +995,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
                     if (error) { // don't try any more BIP73 urls
                         [self payFirstFromArray:[array objectsAtIndexes:[array
                         indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-                            return (idx >= i && ([obj hasPrefix:@"TosCoin:"] || ! [NSURL URLWithString:obj]));
+                            return (idx >= i && ([obj hasPrefix:@"TOSC:"] || ! [NSURL URLWithString:obj]));
                         }]]];
                     }
                     else [self confirmProtocolRequest:req];
@@ -1007,7 +1007,7 @@ memo:(NSString *)memo isSecure:(BOOL)isSecure
     }
     
     [[[UIAlertView alloc] initWithTitle:@""
-      message:NSLocalizedString(@"clipboard doesn't contain a valid toscoin address", nil) delegate:nil
+      message:NSLocalizedString(@"clipboard doesn't contain a valid TOSC address", nil) delegate:nil
       cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles:nil] show];
     [self performSelector:@selector(cancel:) withObject:self afterDelay:0.1];
 }
@@ -1196,7 +1196,7 @@ fromConnection:(AVCaptureConnection *)connection
                 [self handleBitIDURL:request.url];
                 [self resetQRGuide];
             }];
-        } else if ((request.isValid && [request.scheme isEqual:@"TosCoin"]) || [addr isValidBitcoinPrivateKey] ||
+        } else if ((request.isValid && [request.scheme isEqual:@"TosCoin"]) || [addr isValidBitcoinPrivateKey] || // QR Url scheme (Scan part)
                    [addr isValidBitcoinBIP38Key]) {
             self.scanController.cameraGuide.image = [UIImage imageNamed:@"cameraguide-green"];
             [self.scanController stop];
@@ -1263,13 +1263,13 @@ fromConnection:(AVCaptureConnection *)connection
                     else {
                         self.scanController.cameraGuide.image = [UIImage imageNamed:@"cameraguide-red"];
                         
-                        if (([request.scheme isEqual:@"TosCoin"] && request.paymentAddress.length > 1) ||
+                        if (([request.scheme isEqual:@"TosCoin"] && request.paymentAddress.length > 1) || // QR Url scheme : IsValid TOSC address
                             [request.paymentAddress hasPrefix:@"L"] || [request.paymentAddress hasPrefix:@"3"]) {
                             self.scanController.message.text = [NSString stringWithFormat:@"%@:\n%@",
-                                                                NSLocalizedString(@"not a valid toscoin address", nil),
+                                                                NSLocalizedString(@"not a valid TOSC address", nil),
                                                                 request.paymentAddress];
                         }
-                        else self.scanController.message.text = NSLocalizedString(@"not a toscoin QR code", nil);
+                        else self.scanController.message.text = NSLocalizedString(@"not a TOSC QR code", nil);
                         
                         [self performSelector:@selector(resetQRGuide) withObject:nil afterDelay:0.35];
                         [BREventManager saveEvent:@"send:unsuccessful_bip73"];

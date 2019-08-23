@@ -50,9 +50,9 @@
 
 #import "BRWelcomeViewController.h"
 
-#define BALANCE_TIP NSLocalizedString(@"This is your toscoin balance. toscoin is a currency. "\
+#define BALANCE_TIP NSLocalizedString(@"This is your TOSC balance. TOSC is a currency. "\
                                        "The exchange rate changes with the market.", nil)
-#define BITS_TIP    NSLocalizedString(@"%@ is for 'tos'. %@ = 1 toscoin.", nil)
+#define BITS_TIP    NSLocalizedString(@"%@ is for 'tos'. %@ = 1 TOSC.", nil)
 
 #define BACKUP_DIALOG_TIME_KEY @"BACKUP_DIALOG_TIME"
 #define BALANCE_KEY            @"BALANCE"
@@ -202,7 +202,7 @@
                 [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WARNING", nil)
                   message:NSLocalizedString(@"DEVICE SECURITY COMPROMISED\n"
                                             "Any 'jailbreak' app can access any other app's keychain data "
-                                            "(and steal your toscoins). "
+                                            "(and steal your TOSC). "
                                             "Wipe this wallet immediately and restore on a secure device.", nil)
                  delegate:self cancelButtonTitle:NSLocalizedString(@"ignore", nil)
                  otherButtonTitles:NSLocalizedString(@"wipe", nil), nil] show];
@@ -211,7 +211,7 @@
                 [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WARNING", nil)
                   message:NSLocalizedString(@"DEVICE SECURITY COMPROMISED\n"
                                             "Any 'jailbreak' app can access any other app's keychain data "
-                                            "(and steal your toscoins).", nil)
+                                            "(and steal your TOSC).", nil)
                   delegate:self cancelButtonTitle:NSLocalizedString(@"ignore", nil)
                   otherButtonTitles:NSLocalizedString(@"close app", nil), nil] show];
             }
@@ -549,7 +549,7 @@
         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"WARNING", nil)
           message:[NSString stringWithFormat:@"\n%@\n\n%@\n\n%@\n",
                    [NSLocalizedString(@"\nDO NOT let anyone see your recovery\n"
-                                      "phrase or they can spend your toscoins.\n", nil)
+                                      "phrase or they can spend your TOSC.\n", nil)
                     stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]],
                    [NSLocalizedString(@"\nNEVER type your recovery phrase into\n"
                                       "password managers or elsewhere.\n"
@@ -609,7 +609,7 @@
     [[NSUserDefaults standardUserDefaults] setDouble:balance forKey:BALANCE_KEY];
 
     if (self.percent.hidden) {
-        self.navigationItem.title = [NSString stringWithFormat:@"%@  TOS", [manager stringForAmount:balance]];
+        self.navigationItem.title = [NSString stringWithFormat:@"%@  TOSC", [manager stringForAmount:balance]];
     }
 }
 
@@ -789,7 +789,7 @@
     [defs setDouble:now forKey:BACKUP_DIALOG_TIME_KEY];
     
     [[[UIAlertView alloc]
-      initWithTitle:(first) ? NSLocalizedString(@"you received toscoin!", nil) : NSLocalizedString(@"IMPORTANT", nil)
+      initWithTitle:(first) ? NSLocalizedString(@"you received TOSC!", nil) : NSLocalizedString(@"IMPORTANT", nil)
       message:[NSString stringWithFormat:NSLocalizedString(@"\n%@\n\nif you ever lose your phone, you will need it to "
                                                            "recover your wallet", nil),
                (first) ? NSLocalizedString(@"next, write down your recovery phrase", nil) :

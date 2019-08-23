@@ -82,7 +82,7 @@
     NSURL *url = [NSURL URLWithString:s];
 
     if (! url || ! url.scheme) {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"TosCoin://%@", s]];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"TosCoin://%@", s]]; // QR Url scheme: received part
     }
     else if (! url.host && url.resourceSpecifier) {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"%@://%@", url.scheme, url.resourceSpecifier]];
@@ -90,7 +90,7 @@
 
     self.scheme = url.scheme;
 
-    if ([url.scheme isEqual:@"TosCoin"]) {
+    if ([url.scheme isEqual:@"TosCoin"]) { // QR Url scheme: received&scan poart
         self.paymentAddress = url.host;
 
         //TODO: correctly handle unknown but required url arguments (by reporting the request invalid)
@@ -127,12 +127,12 @@
 
 - (NSString *)string
 {
-    if (! [self.scheme isEqual:@"TosCoin"]) return self.r;
+    if (! [self.scheme isEqual:@"TosCoin"]) return self.r; // QR Url scheme: Generate eligible shape of QR
 
     
     NSLog(@"self.amount :%llu",self.amount);
     
-    NSMutableString *s = [NSMutableString stringWithString:@"TosCoin:"];
+    NSMutableString *s = [NSMutableString stringWithString:@"TosCoin:"]; // QR Url scheme: received part
     NSMutableArray *q = [NSMutableArray array];
     NSMutableCharacterSet *charset = [[NSCharacterSet URLQueryAllowedCharacterSet] mutableCopy];
 
@@ -230,7 +230,7 @@ completion:(void (^)(BRPaymentProtocolRequest *req, NSError *error))completion
     NSMutableURLRequest *req = (u) ? [NSMutableURLRequest requestWithURL:u
                                       cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:timeout] : nil;
 
-    [req setValue:@"application/toscoin-paymentrequest" forHTTPHeaderField:@"Accept"];
+    [req setValue:@"application/TOSC-paymentrequest" forHTTPHeaderField:@"Accept"];
 //  [req addValue:@"text/uri-list" forHTTPHeaderField:@"Accept"]; // breaks some BIP72 implementations, notably bitpay's
 
     if (! req) {
@@ -253,7 +253,7 @@ completion:(void (^)(BRPaymentProtocolRequest *req, NSError *error))completion
         network = @"test";
 #endif
 
-        if ([response.MIMEType.lowercaseString isEqual:@"application/toscoin-paymentrequest"] && data.length <= 50000) {
+        if ([response.MIMEType.lowercaseString isEqual:@"application/TOSC-paymentrequest"] && data.length <= 50000) {
             request = [BRPaymentProtocolRequest requestWithData:data];
         }
         else if ([response.MIMEType.lowercaseString isEqual:@"text/uri-list"] && data.length <= 50000) {
@@ -297,8 +297,8 @@ completion:(void (^)(BRPaymentProtocolACK *ack, NSError *error))completion
         return;
     }
 
-    [req setValue:@"application/toscoin-payment" forHTTPHeaderField:@"Content-Type"];
-    [req addValue:@"application/toscoin-paymentack" forHTTPHeaderField:@"Accept"];
+    [req setValue:@"application/TOSC-payment" forHTTPHeaderField:@"Content-Type"];
+    [req addValue:@"application/TOSC-paymentack" forHTTPHeaderField:@"Accept"];
     req.HTTPMethod = @"POST";
     req.HTTPBody = payment.data;
 
@@ -311,7 +311,7 @@ completion:(void (^)(BRPaymentProtocolACK *ack, NSError *error))completion
 
         BRPaymentProtocolACK *ack = nil;
 
-        if ([response.MIMEType.lowercaseString isEqual:@"application/toscoin-paymentack"] && data.length <= 50000) {
+        if ([response.MIMEType.lowercaseString isEqual:@"application/TOSC-paymentack"] && data.length <= 50000) {
             ack = [BRPaymentProtocolACK ackWithData:data];
         }
 
